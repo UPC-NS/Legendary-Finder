@@ -30,7 +30,7 @@ for nation in nations:
 
     for card in r.find_all("CARD"):
         if card.CATEGORY.text == "legendary":
-            finds.append(f"{nation} - https://www.nationstates.net/page=deck/card={r.CARDID.text}/season={r.SEASON.text}")
+            finds.append(f"{nation} - https://www.nationstates.net/page=deck/card={card.CARDID.text}/season={card.SEASON.text}")
 
 with open("output.txt", "w") as f:
     for find in finds:
